@@ -1,13 +1,19 @@
-"""
-快速排序 — 分治法的优雅体现
+def quicksort(arr: list) -> list:
+    """快速排序，采用分治策略。
 
-每次选一个基准值，将数组分为“比它小的”和“比它大的”，再递归排序两边。
+    选取第一个元素为基准值（pivot），将剩余元素分为小于等于和大于 pivot 的两组，
+    分别递归排序后拼接结果。
 
-有趣在哪：一句 quicksort(left) + [pivot] + quicksort(right) 就完成了排序，
-把“分而治之”的思想变成了直观可读的代码。
+    Args:
+        arr: 待排序的列表。
 
-"""
-def quicksort(arr):
+    Returns:
+        排序后的新列表（非原地排序）。
+
+    Example:
+        >>> quicksort([3, 6, 8, 10, 1, 2, 1])
+        [1, 1, 2, 3, 6, 8, 10]
+    """
     if len(arr) <= 1:
         return arr
     pivot = arr[0]

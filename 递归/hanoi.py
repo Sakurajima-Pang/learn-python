@@ -17,10 +17,20 @@
 
 这个问题的逻辑是，将 n-1 个盘子从源柱子移动到辅助柱子，然后将第 n 个盘子从源柱子移动到目标柱子，最后再将 n-1 个盘子从辅助柱子移动到目标柱子。
 这样就能够确保所有盘子按照规则正确地移动到目标柱子上。
+
+不过实际上这样看来很难构造递归函数，比较抽象
 """
 
 # ai生成的代码如下：
 def hanoi(n, source, target, auxiliary):
+    """汉诺塔问题的递归解法。
+
+    Args:
+        n: 盘子的数量。
+        source: 源柱名称。
+        target: 目标柱名称。
+        auxiliary: 辅助柱名称。
+    """
     global times
     if n == 1:
         print(f"将盘子 1 从 {source} 移到 {target}")
@@ -34,6 +44,14 @@ def hanoi(n, source, target, auxiliary):
 
 # 下面是我们一步一步的思考，看看到底是怎么写出这个函数的：
 def my_hanoi(n, source, target, auxiliary): 
+    """汉诺塔问题的递归解法（带注释推导过程）。
+
+    Args:
+        n: 盘子的数量。
+        source: 源柱名称。
+        target: 目标柱名称。
+        auxiliary: 辅助柱名称。
+    """
     global times
 
     """
